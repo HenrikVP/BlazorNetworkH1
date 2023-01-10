@@ -11,3 +11,7 @@ Item NVARCHAR(255),
 Amount INT,
 Price DECIMAL(10,2)
 )
+
+INSERT INTO Food VALUES ('Donut', 15, 3)
+
+SELECT * FROM Food
