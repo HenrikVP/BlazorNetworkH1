@@ -43,5 +43,15 @@ namespace BlazorNetworkH1.Data
             con.Close();
             return list;
         }
+
+        public bool DeleteFood(int id) 
+        {
+            SqlCommand cmd = new("DELETE FROM [food] WHERE Id = @id", con);
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            con.Open();
+            bool isSuccess = cmd.ExecuteNonQuery() == 1 ? true : false;
+            con.Close();
+            return isSuccess;
+        }
     }
 }
